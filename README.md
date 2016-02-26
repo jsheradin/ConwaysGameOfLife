@@ -10,10 +10,14 @@ This is an implementation of Conway's game of life in Processing following the f
 
 
 ### Controls
-- ENTER: Play/Pause
-- SHIFT: Seed random cells into the grid
+- SPACE: Play/Pause
+- S: Seed random cells into the grid
 - BACKSPACE: Kill/clear all cells on the grid
 - Left Click: Toggle clicked cell alive or dead
+- UP arrow key: Speed up cycles
+- DOWN arrow key: Slow down cycles
+- RIGHT arrow key: Manually advance one cycle
+- D: Toggle debug numbers
 
 ### Additional Info
 - Game starts paused with no living cells
