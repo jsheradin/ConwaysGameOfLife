@@ -1,11 +1,11 @@
 //Settings
-int blocksWide = 40; //Width in blocks
-int blocksTall = 40; //Height in blocks
+int blocksWide = 70; //Width in blocks
+int blocksTall = 70; //Height in blocks
 float difficulty = .65; //Bomb spawning probability (sort of)
 int loopRate = 50; //Loop delay in ms
 
 //Appearance Settings
-int pixPerBlock = 15; //Block size in pixels
+int pixPerBlock = 10; //Block size in pixels
 
 //Game Variables
 int nums = 0;
@@ -155,10 +155,10 @@ void keyPressed() {
         state[i][j] = false;
       }
     }
-  } else if (keyCode == UP && loopRate > 2) { //up to speed up
-    loopRate -= 2;
+  } else if (keyCode == UP && loopRate != 0) { //up to speed up
+    loopRate -= 1;
   } else if (keyCode == DOWN) { //down to slow down
-    loopRate += 2;
+    loopRate += 1;
   } else if (keyCode == RIGHT) { //right to advance manually
     advance();
   } else if (key == 'd' || key == 'D') { //d to toggle debug numbers
@@ -169,8 +169,8 @@ void keyPressed() {
 //On each mouse click
 void mouseClicked() {
   //Determine block clicked
-  int x = ceil(mouseX / pixPerBlock);
-  int y = ceil(mouseY / pixPerBlock);
+  int x = floor(mouseX / pixPerBlock);
+  int y = floor(mouseY / pixPerBlock);
 
   //Toggle block life
   if (mouseButton == LEFT) {
